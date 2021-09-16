@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<!-- templates/base.html -->
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: aqua">
+
+<header class="jumbotron text-center" style="background-color: aqua">
+
+    <h1 style="font-family: 'Cookie', cursive; color: blueviolet">MareNostrum</h1>
+    <p style="font-family: 'Arial Black'">
+      Bem vindo(a) á plataforma MareNosTrum, uma web app que nos permite saber todas as informações em direto do mar portugues!
+    </p>
+    <nav>
+        <a href="{% url 'website:home' %}" class="btn btn-info">Home
+
+        </a>
+        <a href="{% url 'website:historia' %}" class="btn btn-info">História
+
+        </a>
+        <a href="{% url 'website:explorar' %}" class="btn btn-info">Explorar
+
+        </a>
+         <a href="{% url 'website:explorar' %}" class="btn btn-info">Praias Portuguesas
+
+        </a>
+         <a href="{% url 'website:explorar' %}" class="btn btn-info">Por decidir
+
+        </a>
+         <a href="{% url 'website:explorar' %}" class="btn btn-info">Contacto
+
+        </a>
+         <a href="{% url 'website:explorar' %}" class="btn btn-info">Quizz
+
+        </a>
+         <a href="{% url 'website:explorar' %}" class="btn btn-info">Comentário
+
+        </a>
+    </nav>
+
+</header>
+<article class="container">
+    <main class="col-sm-6">
+
+    </main>
+    <aside class="col-sm-6" >
+<img>
+    </aside>
+</article>
+<footer>
+    web-site
+     Criadora: Bárbara Quaresma
+</footer>
+</body>
+</html>
