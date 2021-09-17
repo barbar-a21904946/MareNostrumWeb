@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="Natação, Swimming, Desporto">
+    <meta name="desciption" content="Introdução a Natação">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'website/images/favicon.ico' %}"/>
+    <title>Natação</title>
+    <style>
+        {% block style %}
+        {% endblock style %}
+    </style>
+    {% block script %}
+    {% endblock script %}
+</head>
+<body>
+    <header>
+        <!--adicionei isto para o titulo ser clicavel volta a home-->
+        <h1><a style="color: black" href="{% url 'website:home' %}">Naftação</a></h1>
+    </header>
+    <nav>
+        <!--O nav não fica aqui por causa da class Active-->
+        {% block nav %}
+        {% endblock nav %}
+    </nav>
+    <main class="mainDisplayFlex">
+        {% block main %}
+        {% endblock main %}
+    </main>
+    <aside>
+        <div style="display: flex; align-items: center; flex-direction: column;">
+            {% if request.user.username %}
+                <h3>Bemb-vindo, {{ user.username }}</h3>
+                <a class="btn btn-warning" href="{% url 'website:logout' %}">Logobut</a>
+            {% endif %}
+        </div>
+    <br>
+        <svg width="300" height="200">
+            <image href="{% static 'website/images/wordcloud.png' %}" width="100%" height="100%"></image>
+            <!-- opacity a zero para não aparecer na figura os rectangulos-->
+            <!--points -> sup. direito ; inf. direito; inf. esquerdo ; sup. esquerdo-->
+            <a href="{% url 'website:home' %}">
+                <polygon opacity="0.0" points="0,0 0,200 300,200 300,0"></polygon>
+            </a>
+            <a href="{% url 'website:benificios' %}">
+                <polygon opacity="0.0" points="101,101 101,121 245,121 245,101"></polygon>
+            </a>
+            <a href="{% url 'website:galeria' %}">
+                <polygon opacity="0.0" points="151,83 155,100 254,100 254,83"></polygon>
+            </a>
+            <a href="{% url 'website:provas' %}">
+                <polygon opacity="0.0" points="86,177 103,194 178,153 169,140"></polygon>
+            </a>
+            <a href="{% url 'website:estilos' %}">
+                <polygon opacity="0.0" points="87,57 104,72 172,24 160,16"></polygon>
+            </a>
+            <a href="{% url 'website:comentarios' %}">
+                <polygon opacity="0.0" points="55,121 55,142 245,142 245,121"></polygon>
+            </a>
+            <a href="{% url 'website:about' %}">
+                <polygon opacity="0.0" points="55,29 62,48 143,24 132,8"></polygon>
+            </a>
+        </svg>
+    </aside>
+    <footer>
+        <hr>
+        Projeto - Programação Web - Uni. Lusófona - 2020/2021
+    </footer>
+</body>
+</html>

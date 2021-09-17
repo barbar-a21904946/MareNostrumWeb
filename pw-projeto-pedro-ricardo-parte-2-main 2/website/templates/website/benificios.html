@@ -1,0 +1,123 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    /*Para ser o javacript e o django a dar load um de cada vez*/
+    section {
+        display: none;
+    }
+{% endblock style %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a class="active" href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block script %}
+    <script src="{% static 'website/js/singlePageApp.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <!--BENIFICIOS INTRO-->
+    <section id="0">
+        <p id="firstBig" style="text-align:justify;">
+            Nadar favorece um coração saudável, deixa-nos mais flexíveis, promove um peso ideal, mas há mais. Ou não fosse a natação uma das modalidades mais completas.
+            E não é por acaso pois esta modalidade, em que todos os músculos do nosso corpo entram em ação, está repleta de benefícios desde o coração, às articulações, peso e postura.
+            A melhor parte é que pode ser praticada por todas as idades.<a href="https://www.cuf.pt/mais-saude/5-beneficios-da-natacao">[1]</a>
+        </p>
+        <figure style="text-align: center">
+            <a href="https://blog.unisportbrasil.com.br/wp-content/uploads/2020/08/original-771c1624327ddf171cab0c81edecb3c4-scaled.jpeg">
+                <img src="{% static 'website/images/benificios1.jpg' %}" class="borBlueRad25">
+            </a>
+            <figcaption style="text-align: center;">Nado do tipo "Crawl"</figcaption>
+        </figure>
+    </section>
+    <section id="1">
+        <article>
+            <h3>1. Melhora a postura e a flexibilidade:</h3>
+            <p id="firstBig" style="text-align: justify;">
+                Além de melhorar a coordenação motora, o equilíbrio, a flexibilidade, a resistência e a força muscular, um dos benefícios da natação passa também pela promoção de uma boa postura.
+            </p>
+        </article>
+    </section>
+    <section id="2">
+        <article>
+            <h3>2. Diminui a dor e risco de lesões:</h3>
+            <p id="firstBig" style="text-align: justify;">
+                O fortalecimento do nosso organismo faz com que muitas dores de origem difusa diminuam.
+                A natação é um dos desportos mais recomendados pelos especialistas para acalmar patologias que impliquem muitas dores, como a
+                <a href="https://www.mayoclinic.org/diseases-conditions/fibromyalgia/symptoms-causes/syc-20354780#:~:text=Fibromyalgia%20is%20a%20disorder%20characterized,process%20painful%20and%20nonpainful%20signals.">
+                    fibromialgia</a>.
+            </p>
+        </article>
+        <figure style="text-align: center;">
+            <a href="https://www.jasminealimentos.com/wp-content/uploads/2015/08/natacao1.jpg">
+                <img src="{% static 'website/images/benificios2.jpg' %}" class="borBlueRad25">
+            </a>
+            <figcaption style="text-align: center;">"Volta" na parede ou viragem</figcaption>
+        </figure>
+    </section>
+    <section id="3">
+        <article>
+            <h3>3. Mantém o coração mais saudável:</h3>
+            <p id="firstBig" style="text-align: justify;">
+                Um estudo realizado pela <i>University of New York</i> demonstrou que um dos benefícios da natação, nas pessoas que praticam, é uma frequência cardíaca e níveis de tensão arterial mais baixos do que as pessoas que não nadam, assim como melhor circulação sanguínea e menos problemas do foro respiratório.
+            </p>
+        </article>
+    </section>
+    <section id="4">
+        <article>
+            <h3>4. Aumenta a autoestima:</h3>
+            <p id="firstBig" style="text-align: justify;">
+                Os desportistas sentem-se mais independentes e seguros. No caso da natação, a estes benefícios acrescenta-se o facto da água permitir uma liberdade de movimentos que o trabalho a seco não proporciona.
+                Isto favorece a vertente lúdica, facilitando o relaxamento mental.
+            </p>
+        </article>
+    </section>
+    <section id="5">
+        <article>
+            <h3>5. Favorece o aumento da massa muscular:</h3>
+            <p id="firstBig" style="text-align: justify;">
+                O problema é que os membros superiores são um pouco mais trabalhados que os membros inferiores.
+                Um estudo que observou homens praticantes de natação verificou que, em oito semanas, houve um aumento de 23,8% no
+                <a href="https://pt.wikipedia.org/wiki/Tr%C3%ADceps_braquial">
+                    tríceps braquial</a>.
+            </p>
+        </article>
+    </section>
+    <!--VIDEO COM BENFICIOS-->
+    <section id="6">
+        <p>Se o seu estilo é mais video do que texto, veja este aqui sobre os benificios da natação:</p>
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/AfnwseOgxE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+{% endblock main %}

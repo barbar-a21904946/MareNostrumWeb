@@ -1,0 +1,299 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    /*Para ser o javacript e o django a dar load um de cada vez*/
+    section {
+        display: none;
+    }
+    th {
+        text-align: center;
+    }
+{% endblock style %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a class="active" href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block script %}
+    <script src="{% static 'website/js/singlePageApp.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <section id="0">
+        <figure style="text-align: center;">
+            <figcaption style="text-align: center; ">Mapa do Website</figcaption>
+            <a href="{% static 'website/images/mapaWebsite.png' %}" target="_blank">
+                <img style="border: 5px solid rgb(8, 70, 95);" src="{% static 'website/images/mapaWebsiteSmall.png' %}">
+            </a>
+            <figcaption style="text-align: center; ">Nota: Click na imagem para abrir versão maior</figcaption>
+        </figure>
+    </section>
+    <br>
+    <!--LAYOUT PC-->
+    <div class="tabelasPequenasAbout">
+        <section id="1">
+            <table class="tableCenter" cellpadding="10%" cellspacing="3">
+                <thead>
+                    <caption>
+                        Layout PC
+                    </caption>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Header</td>
+                        <td>Header</td>
+                        <td>Header</td>
+                    </tr>
+                    <tr>
+                        <td>Menu</td>
+                        <td>Menu</td>
+                        <td>Menu</td>
+                    </tr>
+                    <tr>
+                        <td>Main</td>
+                        <td>Main</td>
+                        <td>Aside</td>
+                    </tr>
+                    <tr>
+                        <td>Footer</td>
+                        <td>Footer</td>
+                        <td>Footer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!--LAYOUT MOBILE-->
+        <section id="2">
+            <table class="tableCenter" cellpadding="10%" cellspacing="3">
+                <thead>
+                    <caption>
+                        Layout Mobile
+                    </caption>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Header</td>
+                    </tr>
+                    <tr>
+                        <td>Menu</td>
+                    </tr>
+                    <tr>
+                        <td>Main</td>
+                    </tr>
+                    <tr>
+                        <td>Aside</td>
+                    </tr>
+                    <tr>
+                        <td>Footer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!--TABELA Inventário-->
+        <section id="3">
+            <table class="tableCenter" cellpadding="10%" cellspacing="3">
+                <thead>
+                    <caption>
+                        Tabela de Inventário
+                    </caption>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Páginas</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>Imagens</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>Links Externos</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Vídeos</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Animações</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <br><br>
+    <!--Tabela Syntax HTML e CSS-->
+    <section id="4">
+        <table style="margin: auto;" cellpadding="10%" cellspacing="3">
+            <thead>
+                <tr>
+                    <th>Carateristicas</th>
+                    <th>Elementos/Técnicas</th>
+                    <th>Exemplos</th>
+                </tr>
+                <caption>
+                    Tabela Syntax HTML e CSS
+                </caption>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Layouts</td>
+                    <td>CSS grid e CSS flexbox</td>
+                    <td>Todas as páginas</td>
+                </tr>
+                <tr>
+                    <td>Responsividade</td>
+                    <td>Layout para telemovel e PC consoante o tamanho da janela do browser</td>
+                    <td>Todas as páginas</td>
+                </tr>
+                <tr>
+                    <td>Seletores</td>
+                    <td>Universal, tipo, classe, id, atributo, pseudo-classe, pseudo-elemento</td>
+                    <td>Na página de estilos CSS</td>
+                </tr>
+                <tr>
+                    <td>Etiquetas</td>
+                    <td>Main, header, article, footer, figure, table, svg, image, a, p, h, section, input, label, figcaption, aside, u, li, form, span, iframe, style, polygon, meta, link, title, div</td>
+                    <td>Todas as Páginas</td>
+                </tr>
+                <tr>
+                    <td>Animações</td>
+                    <td>Keyframes</td>
+                    <td>Para a mudança de cor do background na página home e a translação do titulo</td>
+                </tr>
+                <tr>
+                    <td>Propriedades CSS</td>
+                    <td>Box-sizing, font-family, box-shadow, font-size, colour, text-decoration, grid-area, min-width, display, grid-template-columns, grid-template-areas, align-items, justify-content, position, top, width, background-color, z-index, padding, text-align, margin, border, border-radiux, transform, filter, animation-name, animation-duration, margin-left, margin-right, flex-wrap, right, left, bottom, float</td>
+                    <td>Usados todos na página de estilos CSS</td>
+                </tr>
+                <tr>
+                    <td>Tipos Display</td>
+                    <td>Flex, Grid, Block, None</td>
+                    <td>Flex usado em todas para ordenar conteudos, Block usado no nav e para central iframes e svgs, Grid usado para fazer as templates, None usado para desaparecer as fotos sticky e fixed no modo telemovel</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br>
+    <!--Tabela tecnicas usadas-->
+    <section id="5">
+        <table style="margin: auto;" cellpadding="10%" cellspacing="3">
+            <thead>
+                <tr>
+                    <th>Técnicas</th>
+                    <th>Detalhes</th>
+                </tr>
+                <caption>
+                    Tabela de Técnicas Usadas
+                </caption>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>O HTML foi usado como base deste projeto, desde o começo em um site estático para agora em Django. Serviu também para uma melhor clareza e organização do código.</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>O CSS é o responsável pela estilização e responsividade do site, desde animações, cores ao estilo do texto.</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>O Django foi utilizado como web framework do site, serviu para passar de um site estático para um dinâmico, renderizando as páginas com dados da BD.</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>O JavaScript serviu forma de ligação entre o DOM e o Django, atualizando as páginas em tempo real.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br>
+    <!--Tabela tecnologias usadas-->
+    <section id="6">
+        <table style="margin: auto;" cellpadding="10%" cellspacing="3">
+            <thead>
+                <tr>
+                    <th>Tecnologias</th>
+                    <th>Detalhes</th>
+                </tr>
+                <caption>
+                    Tabela de Tecnologias Usadas
+                </caption>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>Ver tabela acima</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Ver tabela acima.</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>O django foi usado para guardar os dados obtidos nos formulários de quizz, comentários e contacto, estando estes associados a uma class pessoa fazendo assim uso da foreign key. (ver descrição mais detalhada no github)</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Juntamente com o Django implementamos uma SPA "scroll infinito" uma adaptação de uma SPA criada em aula pelo professor Lúcio. Esta quando o user chega ao fim da página vai carregando mais informação segundo a ordem que o Django deu. (ver descrição mais detalhada no github)</td>
+                </tr>
+                <tr>
+                    <td>GitHub</td>
+                    <td>O github foi utilizado como local de repositório do projeto, servindo assim para um melhor trabalho de equipa, tendo sempre o projeto atualizado.</td>
+                </tr>
+                <tr>
+                    <td>Heroku</td>
+                    <td>O heroku serviu como plataforma de cloud para implementação do website.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br>
+    <section id="7">
+        <figure style="text-align: center;">
+            <a href="https://github.com/pedroC-21904825/pw-projeto-pedro-ricardo-parte-2" target="_blank">
+                <img src="{% static 'website/images/github.png' %}">
+            </a>
+            <figcaption style="text-align: center;">Repositório GitHub</figcaption>
+        </figure>
+    </section>
+    <br><br>
+    <section id="8">
+    <h3 style="text-align: center;">Vídeo de Apresentação</h3>
+    <!--VIDEO YOUTUBE-->
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/dpQGfTamNyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+{% endblock %}

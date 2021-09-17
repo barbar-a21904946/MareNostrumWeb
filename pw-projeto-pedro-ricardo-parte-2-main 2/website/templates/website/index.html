@@ -1,0 +1,196 @@
+{% extends 'website/base.html' %}
+{% load static %}
+    {% block style %}
+        /*Para não ficar tudo mal quando for para telemovel*/
+        @media (max-width: 600px) {
+            main > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+        @keyframes backChange {
+            from {background-color: rgb(23, 100, 145)}
+            to {background-color:rgb(235, 235, 235);}
+        }
+        body {
+            animation-name: backChange;
+            animation-duration: 5s;
+        }
+        nav {
+            animation-name: backChange;
+            animation-duration: 5s;
+        }
+        /*Para ser o javacript e o django a dar load um de cada vez*/
+        section {
+            display: none;
+        }
+    {% endblock %}
+{% block nav %}
+    <a class="active" href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block script %}
+    <script src="{% static 'website/js/singlePageApp.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <div> <!--Div adiconado para nao levar com a class mainDisplayFlex-->
+        <!--HISTORIA A NATAÇÃO-->
+        <section id="0">
+            <h3>Qual é a história da natação?</h3>
+                <p id="firstBig" style="text-align: justify;">
+                    Os seres humanos nadam há milênios.
+                    De acordo com a Wikipedia, os desenhos em cavernas da Idade da Pedra retratam indivíduos a nadar e há referências escritas na Bíblia e nos poemas gregos "The Lliad" e "The Odyssey" que datam de 1.500 a 2.000 anos.
+                    <a href="https://pt.wikipedia.org/wiki/Nata%C3%A7%C3%A3o">[1]</a>
+                </p>
+                <figure style="float: right;">
+                    <a href="https://www.terra.com.br/vida-e-estilo/saude/bem-estar/19-mitos-e-verdades-sobre-natacao,19cecaf0cb92455dab063aa77d3f8581grpwyfyv.html">
+                        <img src="{% static 'website/images/home1.jpg' %}" class="fotoHome1">
+                    </a>
+                    <figcaption style="transform: rotate(10deg); text-align: center;">
+                        <a href="{% url 'website:estilos' %}" style="color: black;">
+                            Nado do estilo "Crawl"
+                        </a>
+                    </figcaption>
+                </figure>
+        </section>
+        <section id="1">
+            <p id="firstBig" style="text-align: justify;">
+                De acordo com a <i>Encyclopedia of Traditional British Rural Sports</i>, a literatura especificamente relacionada à natação cresceu na idade média.
+                Acredita-se que o primeiro livro dedicado à natação foi <i>Colymbetes</i> de Nicolas Wynman escrito em 1538, e um texto mais amplamente conhecido, De Arte Nantandi, foi publicado em latim por Everard Digby em 1587.
+                A enciclopédia também relata que a natação era exigida dos cavaleiros e que os romanos construíram casas de banho e piscinas nas cidades que conquistaram para servir como clubes sociais e locais de exercício.
+            </p>
+            <p id="firstBig" style="text-align: justify;">
+                A natação organizada começou nos anos 1800 e 1900 com a criação de associações de natação e clubes que competiam entre si.
+                Nessa época, há relatos de clubes de natação na Inglaterra, França, Alemanha e Estados Unidos.
+                Eventos de alto nível também contribuíram para a visibilidade da natação. Por exemplo, Matthew Webb fez a travessia do Canal da Mancha (<i>English Channel</i>) em 1875, em menos de 22 horas.
+            </p>
+        </section>
+        <section id="2">
+            <figure style="text-align: center;">
+                <a href="https://www.historytoday.com/archive/months-past/matthew-webb-swims-english-channel">
+                    <img class="fotoHome2" src="{% static 'website/images/home2.jpg' %}">
+                </a>
+                <figcaption>Capitão Matthem Webb</figcaption>
+            </figure>
+        </section>
+        <section id="3">
+            <p id="firstBig" style="text-align: justify;">
+                A natação competitiva continuou a crescer em popularidade durante os anos 1800 e foi incluída nos primeiros Jogos Olímpicos modernos em Atenas, em 1896.
+                Em 1904, as Olimpíadas em St. Louis incluíram as provas de 50-, 100-, 220-, 440-, 880 jardas e um estilo livre de uma milha, o nado de costas de 100 jardas e o nado de bruços de 440 jardas e uma estafeta de nado livre de 4x50 jardas.
+            </p>
+            <p id="firstBig" style="text-align: justify;">
+                No século 20, a natação tinha-se tornado numa tendência. As piscinas cobertas estavam a começar a aparecer, a maioria das cidades com população superior a 20.000 habitantes tinha piscinas públicas ao ar livre e os clubes de natação tornaram-se cada vez mais populares para recreação.
+                As mulheres participaram pela primeira vez nas provas natação nos Jogos Olímpicos de Estocolmo em 1912. Em 1924 Johnny Weissmuller foi o primeiro homem a nadar os 100m livres abaixo de 1 minuto.
+            </p>
+        </section>
+
+        <section id="4">
+            <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/E4Kdh1TSmJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <section id="5">
+            <h3>História Moderna</h3>
+            <p id="firstBig" style="text-align: justify;">
+                A primeira Grande Figura aparece nos finais da decada de 60, essa figura era o americano <a href="https://pt.wikipedia.org/wiki/Mark_Spitz">Mark Spitz</a> que tem 8 medalhas olimpicas em sua posse.
+            </p>
+
+            <p id="firstBig" style="text-align: justify;">
+                Nos anos 80 começou a dar-se uma maior importância ao percurso subaquatico (quando o nadador está completamnete debaixo de água) e essa foi uma das principais inovações no nado dos atletas. Depois de se abusar disso a FINA limitou o uso do percurso subaquatico a 15m (regra que dura ainda até hoje).
+            </p>
+
+            <p id="firstBig" style="text-align: justify;">
+                Durante os jogos olimpicos de 2000 apareceu a maior figura de sempre da natação e umaa das maiores do desporto em geral, <a href="https://pt.wikipedia.org/wiki/Michael_Phelps">Michael Phelps</a> que tinha somente 15 anos. Phelps começou a ganhar medalhas em Atenas 2004, depois disso foi só fazer historia que todos conhecemos, retirou-se no Rio de Janeiro durante os jogos olimpicos de 2016 depois de ganhar 28 medalhas olimpicas e para cima de muitos recordes.
+            </p>
+
+            <figure style="text-align: center;">
+                <a href="https://swimchannel.net/michael-phelps/">
+                    <img src="{% static 'website/images/phelps.jpg' %}" class="fotoHome2">
+                </a>
+                <figcaption>
+                    Michael Phelps
+                </figcaption>
+            </figure>
+
+            <p id="firstBig" style="text-align: justify;">
+                Em 2008 começou a maior polémica de sempre na natação, essa polémica foram os chamados fatos de alta tecnologia. Esses fatos davam uma muito menor resistência, que fazia os nadadores nadarem muito mais rápido. <br>
+                Esses fatos foram banidos da natação em 2010 depois de se bateram imensos recordes do mundo no mundial de Roma de 2009.<a href="https://www.dn.pt/desporto/outras-modalidades/o-fim-da-era-dos-fatos-de-banho-tecnologicos-1455967.html">[2]</a><br>
+                Atualmente a natação continua a evoluir de uma foram exponendcial e continuam-se a bater recordes do mundo e a dar umas grandes "batalhas" dentro das piscinas.
+            </p>
+        </section>
+
+        <section id="6">
+            <h3>História da natação portuguesa</h3>
+            <p id="firstBig" style="text-align: justify;">
+                Em Portugal os primordios da natação demoraram a chegar mas a primeira prova chegou ainda na primeira decada do seculo XX no rio Tejo. <br>
+                O primeiro nadador Olimpico foi a Paris em 1924 e foi Mario Marques.
+            </p>
+
+            <p id="firstBig" style="text-align: justify;">
+                Os "Anos de Ouro" da natação portuguesa chegou com o treinador Shintaro Yokochi no Sport Lisboa e Benfica. A cara dora nadadores era Alexandre Yokochi, nadador olimpico especialista em bruços.
+                Em Los Angeles Yokochi fez a melhor participação de sempre de um portugues nos jogos olimpicos, foi um 7º lugar na prova de 200m bruços. <br>
+                Nessa decada havia uma grande rivalidade entre o Benfica e o Sport Algés e Dafundo.
+            </p>
+
+            <figure style="text-align: center;">
+                <a href="https://observador.pt/2019/08/02/ha-35-anos-alexandre-yokochi-foi-o-engenheiro-da-primeira-e-unica-final-olimpica-da-natacao-portuguesa/">
+                    <img src="{% static 'website/images/yokochi.jpg' %}" class="fotoHome2">
+                </a>
+                <figcaption>
+                    Alexandre Yokochi
+                </figcaption>
+            </figure>
+        </section>
+        <section id="7">
+            <p id="firstBig" style="text-align: justify;">
+                Na decada de 2000 começaram-se a destacar Simão Morgado e Diana Gomes, ambos com participações em jogos olimpicos. <br>
+                Atualmente há varios grandes nomes na natação portugues. Diogo Carvalho e Alexis Santos são dos poucos com JO na bagagem e também medalhas europeias. Há também nomes como Miguel Nascimento, Gabriel Lopes, entre outros. <br>
+                No lado feminino destacam-se Tamila Holub, que já tem uma medalha de ouro no europeu de juniores, há também Diana Durães, Victoria Kaminskaya, entre outras. <br>
+                O futuro da natação em Portugal está bem entregue a jovens nadadores que têm muito talento e qualidade.
+            </p>
+
+            <figure style="text-align: center;">
+                <a href="https://www.cmjornal.pt/desporto/modalidades/detalhe/_alexis_santos_bronze_nos_europeus_de_natacao">
+                    <img src="{% static 'website/images/Alexis.jpg' %}" class="fotoHome2">
+                </a>
+                <figcaption>
+                    Podio de Alexis Santos no europeu
+                </figcaption>
+            </figure>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'website/base.html' %}
+{% load static %}
+    {% block style %}
+        section > figure > a > img {
+            border: 5px solid blue;
+        }
+    {% endblock %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a class="active" href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block main %}
+    <!--STICKY IMAGE-->
+    <section class="sticky">
+        <figure>
+            <a href="https://fpnatacao.pt/noticia.php?codigo=737">
+                <img style="border: 5px solid rgb(36, 120, 216);" src="{% static 'website/images/GaleriaSticky.jpg' %}">
+            </a>
+            <figcaption>Nadador em Águas Abertas</figcaption>
+        </figure>
+    </section>
+    <!--CONTENTOR FLEX-->
+    <h2 style="text-align: center;">Estilos</h2>
+    <section class="contentorFlex">
+        <figure>
+            <a href="https://desporto.sapo.pt/modalidades/natacao/artigos/alexis-santos-bate-recorde-nacional-dos-50-metros-brucos-em-piscina-curta">
+                <img src="{% static 'website/images/GaleriaBruços.jpg' %}">
+            </a>
+            <figcaption style="text-align: center;">Bruços</figcaption>
+        </figure>
+        <figure>
+            <a href="https://www.goodsports.com.br/tecnicas-de-natacao-nado-de-costas/">
+                <img src="{% static 'website/images/GaleriaCostas.jpg' %}">
+            </a>
+            <figcaption style="text-align: center;">Costas</figcaption>
+        </figure>
+        <figure>
+            <a href="https://www.medinas.com.br/dicas/nado-crawl-dicas-praticas-para-melhorar-a-performance/">
+                <img src="{% static 'website/images/GaleriaCrawl.jpg' %}">
+            </a>
+            <figcaption style="text-align: center;">Crawl</figcaption>
+        </figure>
+        <figure>
+            <a href="https://www.webrun.com.br/conheca-as-diferencas-de-cada-tipos-de-nado-natacao/">
+                <img src="{% static 'website/images/GaleriaMariposa.jpg' %}">
+            </a>
+            <figcaption style="text-align: center;">Mariposa</figcaption>
+        </figure>
+        <figure>
+            <a href="https://profslusos.blogspot.com/2016/05/piscina-olimpica-que-maravilha.html">
+                <img src="{% static 'website/images/GaleriaPiscina.jpg' %}">
+            </a>
+            <figcaption style="text-align: center;">Piscina Olímpica</figcaption>
+        </figure>
+    </section>
+    <!--RELATIVE AND ABSOLUTE-->
+    <h2 style="text-align: center;">Medalhas de Ouro Olímpicas</h2>
+    <p style="text-align: justify;">
+        Na foto da esquerda está Michael Phelps, que lidera a categoria de homens com 28 medalhas olímpicas.<br>
+        Na foto da direita está Jenny Thompson, que lidera a categoria de mulheres com 12 medalhas olímpicas.
+    </p>
+    <section>
+        <figure class="relativo">
+            <a href="https://cctvgear.co.uk/michael-phelps-the-greatest-athlete-in-olympic-history/">
+                <img style="border: 5px solid grey;" src="{% static 'website/images/GaleriaRelativePhelps.jpg' %}">
+            </a>
+            <figure class="absoluto">
+                <a href="https://www.tupi.fm/esportes/coronavirus-ex-nadadora-chefia-equipe-medica-em-hospital-nos-estados-unidos/">
+                    <img style="border: 5px solid grey;" src="{% static 'website/images/GaleriaAbsoluteThompson.jpg' %}">
+                </a>
+            </figure>
+        </figure>
+    </section>
+    <br><br><br>
+    <!--FIXED IMAGE-->
+    <section class="fixo">
+        <figure>
+            <a href="https://g1.globo.com/sp/itapetininga-regiao/especial-publicitario/fullrepel/maxima-protecao-nao-custa-caro/noticia/2019/08/09/natacao-10-dicas-de-seguranca-em-aguas-abertas.ghtml">
+                <img style="border: 5px solid rgb(36, 120, 216);" src="{% static 'website/images/GaleriaFixed.jpg' %}">
+            </a>
+            <figcaption>Prova de Águas Abertas</figcaption>
+        </figure>
+    </section>
+{% endblock main %}

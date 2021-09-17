@@ -1,0 +1,153 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    /*Para ser o javacript e o django a dar load um de cada vez*/
+    section {
+        display: none;
+    }
+{% endblock style %}
+{% block nav %}
+    <a  href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a class="active" href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block script %}
+    <script src="{% static 'website/js/singlePageApp.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <section id="0">
+        <p id="firstBig" style="text-align:justify;">
+            Sendo a natação um desporto em que o corpo muda constantemente de posição, isto é, o posicionamento do tórax e o movimento de pernas e braços, existem oficialmente quatro tipos de estilos.
+            <a href="https://pt.wikipedia.org/wiki/Nata%C3%A7%C3%A3o_pura">[1]</a>
+        </p>
+    </section>
+
+    <!--Crawl-->
+    <section id="1">
+        <article>
+            <h3>1. Crawl</h3>
+            <figure style="text-align: center;">
+                <a href="https://swimchannel.net/crawl/">
+                    <img src="{% static 'website/images/EstilosCrawl.jpg' %}" class="borBlueRad25">
+                </a>
+            </figure>
+
+            <p id="firstBig" style="text-align: justify;">
+               Crawl é o unico estilo que não tem uma prova dedicada 100% a ele, mas sendo o estilo mais rapido e mais simples de todos é o usado nas provas de estilo livre.
+            </p>
+            <h4>Em que consiste?</h4>
+            <p id="firstBig" style="text-align: justify;">
+                Crawl consiste em estar de barriga para baixo e rodar os braços e também tem que se ter batimento alternado de pernas. É o mais rapido e também o menos complexo de se nadar.
+
+                Se pretende melhorar a sua tecnica tem aqui um video especifico para isso
+            </p>
+            <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/-UzYFyaeGEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <!--Costas-->
+    <section id="2">
+        <article>
+            <h3>2. Costas</h3>
+            <figure style="text-align: center;">
+                <a href="https://www.pinterest.pt/mastersswimming/backstroke-roundup/">
+                    <img src="{% static 'website/images/EstilosCostas.jpg' %}" class="borBlueRad25">
+                </a>
+            </figure>
+
+            <p id="firstBig" style="text-align: justify;">
+               Costas é outro estilo da natação. Como o proprio nome indica este estilo é feito de costas para o fundo.
+               Costas tem também como caracteristica o facto de ser o unico estilo em que se salta/inicia a prova dentro de água.
+            </p>
+            <h4>Em que consiste?</h4>
+            <p id="firstBig" style="text-align: justify;">
+                Este estilo consiste em estar de barriga para cima. O movimento de braços e pernas é muito identico com Crawl.
+                Agora pergunta-se, "Como é que não é tão rapido?". A resposta é simples, o facto de a parte subaquatica da braçada ser feita de costas, a força que exercemos para nos mover é muito menor.
+
+                Se quiser melhorar o seu nado de costas tem aqui um video que o pode ajudar nisso
+            </p>
+            <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/MrFt6JHii8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <!--Bruços-->
+    <section id="3">
+        <article>
+            <h3>3. Bruços</h3>
+            <figure style="text-align: center;">
+                <a href="https://www.swimming.org/masters/improving-your-breaststroke-technique/">
+                    <img src="{% static 'website/images/EstilosBruços.png' %}" class="borBlueRad25">
+                </a>
+            </figure>
+
+            <p id="firstBig" style="text-align: justify;">
+               Bruços é um dos 2 estilos de nado simultâneo. Este estilo é o mais lento dos 4 estilos.
+            </p>
+            <h4>Em que consiste?</h4>
+            <p id="firstBig" style="text-align: justify;">
+                Bruços consiste num movimento simultâneo de ambos os braços e pernas, isto é, os braços e pernas movem-se ambos simetricamente e ao mesmo tempo.
+                A particularidade deste estilo é o facto de ser aquele que mais usa a força das pernas.
+
+                Se acha que parece muito complicado, talvez este video o ajude nesse aspeto
+            </p>
+            <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/EElzlIMjk_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <!--Mariposa-->
+    <section id="4">
+        <article>
+            <h3>4. Mariposa</h3>
+            <figure style="text-align: center;">
+                <a href="https://knoow.net/desporto/despaquaticos/mariposa-natacao/">
+                    <img src="{% static 'website/images/EstilosMariposa.jpg' %}" class="borBlueRad25">
+                </a>
+            </figure>
+
+            <p id="firstBig" style="text-align: justify;">
+                O ultimo estilo é também o mais cansativo, a Mariposa é uma adaptação do termo em inglês, Butterfly. No brasil é mesmo usada uma tradução literal, daí mariposa ser também conhecido em português por borboleta.
+            </p>
+
+            <h4>Em que consiste?</h4>
+            <p id="firstBig" style="text-align: justify;">
+                Este estilo é o mais cansativo pelo simples facto de usar muito a força dos ombros e braços para o movimento simultanio dos braços, e também do elevado uso dos abdominais para o movimento das pernas, As pernas têm que se movimentar sempre em simultâneo e daí o elvado uso abdominal.
+
+                Se acha que parece muido complexo e cansativo, talvez este video o ajude a não se cansar tanto
+            </p>
+            <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/riIyImmuB_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+    </section>
+{% endblock main %}

@@ -1,0 +1,57 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    label {
+        display:block;
+        margin-bottom: 1%;
+    }
+{% endblock style %}
+{% block script %}
+    <script src="{% static 'website/js/script.js' %}"></script>
+{% endblock script %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a class="active" href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quizz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block main %}
+    <h3>Quizz:</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class = "btn btn-primary" type="submit" value="Enviar Quizz">
+    </form>
+{% endblock main %}

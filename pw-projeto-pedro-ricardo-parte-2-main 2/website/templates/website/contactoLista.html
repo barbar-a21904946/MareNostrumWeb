@@ -1,0 +1,61 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    main > p {
+        text-align: left;
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(0, 153, 255);
+    }
+{% endblock style %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a class="active" href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block main %}
+    <h3>Lista de Contactos:</h3>
+    {% for contacto in contactos %}
+        <p>
+            ({{ contacto.dataCriacao.day }}/{{ contacto.dataCriacao.month }})
+            -
+            {{ contacto.nome }}
+            {{ contacto.apelido }}
+            <a href="{% url 'website:contactoApaga' contacto.id %}" class="btn btn-danger" style="float: right">Apagar</a>
+            <a href="{% url 'website:contactoEdita' contacto.id %}" class="btn btn-warning" style="float: right">Editar</a>
+        </p>
+    {% endfor %}
+{% endblock main %}

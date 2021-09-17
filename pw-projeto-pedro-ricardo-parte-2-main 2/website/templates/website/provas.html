@@ -1,0 +1,690 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block style %}
+    /*Para ser o javacript e o django a dar load um de cada vez*/
+    section {
+        display: none;
+    }
+{% endblock style %}
+{% block nav %}
+    <a href="{% url 'website:home' %}">
+        <span class="material-icons md-24">home</span>
+        Home
+    </a>
+    <a href="{% url 'website:estilos' %}">
+        <span class="material-icons md-24">pool</span>
+        Estilos
+    </a>
+    <a href="{% url 'website:benificios' %}">
+        <span class="material-icons md-24">thumb_up</span>
+        Benifícios
+    </a>
+    <a class="active" href="{% url 'website:provas' %}">
+        <span class="material-icons md-24">timer</span>
+        Provas
+    </a>
+    <a href="{% url 'website:galeria' %}">
+        <span class="material-icons md-24">mms</span>
+        Galeria
+    </a>
+    <a href="{% url 'website:comentarios' %}">
+        <span class="material-icons md-24">feedback</span>
+        Comentarios
+    </a>
+    <a href="{% url 'website:quizz' %}">
+        <span class="material-icons md-24">quiz</span>
+        Quizz
+    </a>
+    <a href="{% url 'website:contacto' %}">
+        <span class="material-icons md-24">alternate_email</span>
+        Contacto
+    </a>
+    <a href="{% url 'website:about' %}">
+        <span class="material-icons md-24">build</span>
+        About
+    </a>
+{% endblock nav %}
+{% block script %}
+    <script src="{% static 'website/js/singlePageApp.js' %}"></script>
+{% endblock script %}
+{% block main %}
+    <section id="0">
+    <br>
+    <figure style="text-align: center;">
+        <a href="https://www.swimmingworldmagazine.com/news/2020-olympic-swimming-trials-will-get-750k-from-city-of-omaha/">
+            <img src="{% static 'website/images/bloco.webp' %}" class="borBlueRad25">
+        </a>
+        <details>Bloco de partida Olimpico</details>
+    </figure>
+    </section>
+    <section id="1">
+        <h2>Tipos de Natação:</h2>
+        <p id="firstBig" style="text-align: justify;">
+            Com o avançar da popularidade do desporto começaram a haver uma melhor definição das provas que se faziam durante as provas, com isto defeniu-se a separação entre <b>NATAÇÃO PURA</b> e <b>ÁGUAS ABERTAS</b>
+        </p>
+
+        <h4>As diferenças?</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As diferenças entre natação pura e águas abertas é simples.
+            A natação pura é feita em piscina, piscinas essas que têm 25m ou 50m (é o tamanho de uma piscina Olímpica). A particularidade entre uma piscina de 25m e de 50m é o facto de a de 25 ser mais rapida pois há um maior numero de viragens do que na piscina de 50m.
+        </p>
+
+        <figure style="text-align: center;">
+            <a href="https://www.fireupsports.net/2019/07/11/one-of-the-best-swimming-pools-in-portugal/">
+                <img src="{% static 'website/images/Piscina.jpg' %}" class="borBlueRad25">
+            </a>
+            <figcaption>
+                Piscina Olimpica (50m) de Coimbra
+            </figcaption>
+        </figure>
+
+        <p id="firstBig" style="text-align: justify;">
+            As águas abertas são provas feitas em rio ou em mar. As águas abertas têm provas com maiores distâncias do que a natação pura.
+        </p>
+
+        <figure style="text-align: center;">
+            <a href="https://www.dailysabah.com/sports/2019/12/04/olympic-swimmers-demand-tokyo-to-relocate-open-water-venue-over-heat">
+                <img src="{% static 'website/images/AguasAbertas.jpg' %}" class="borBlueRad25">
+            </a>
+            <figcaption>
+                Começo de uma prova de aguas abertas
+            </figcaption>
+        </figure>
+    </section>
+    <section id="2">
+    <h3>Natação Pura</h3>
+    <h5>NOTA: se algum vídeo não abrir clique no título do mesmo, para abrir numa nova janela.</h5>
+
+        <p id="firstBig" style="text-align: justify;">
+            Como está na página de estilos deste site (se ainda não visitou <a href="{% url 'website:estilos' %}">clique aqui</a>) há 4 estilos de nado. Tendo em conta esses estilos há 17 provas olímpicas (realizadas nos Jogos Olímpicos) e 21 provas oficiais, há esta diferença pois há provas que se fazem nas provas realizadas pela <a href="https://www.fina.org/">FINA</a> que não são realizadas nos jogos olímpicos.
+        </p>
+    </section>
+    <section id="3">
+        <h4>1. Estilo livre</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de estilo livre podem, como o próprio nome indica, ser nadado por qualquer estilo. A maioria dos nadadores optam por nadar o estilo crawl por ser o mais rápido.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Neste estilo há 6 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e Feminino, distâncias essas que são todas provas olímpicas.
+            As distâncias são 50m, 100m, 200m, 400m, 800m (só é prova olímpica para Feminino) e 1500m (só é prova olimpica para Masculino).
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/rhZtZvDdmcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="4">
+        <h4>2. Costas</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de Costas apenas podem ser realizadas no estilo costas.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Neste estilo há 3 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e apenas 2 provas olímpicas para Feminino.
+            As distâncias são 50m (não é prova olimpica), 100m e 200m.
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/iKPicQRTK6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="5">
+        <h4>3. Bruços</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de Bruços apenas podem ser realizadas no estilo Bruços.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Neste estilo há também 3 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e apenas 2 provas olímpicas para Feminino.
+            As distâncias são 50m (não é prova olimpica), 100m e 200m.
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/YsGHSe6N06w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="6">
+        <h4>4. Mariposa</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de Mariposa apenas podem ser realizadas no estilo Mariposa.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Neste estilo há, como Costas e Bruços, 3 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e apenas 2 provas olímpicas para Feminino.
+            As distâncias são 50m (não é prova olimpica), 100m e 200m.
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/w4E5mqGnzIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="7">
+        <h4>5. Estilos</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de Estilos têm a particularidade de ser nadadas pelos 4 estilos existentes, embora que por uma ordem especifica. A ordem é Mariposa, Costas, Bruços, Crawl.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Nas provas de estilos, há também 3 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e apenas 2 provas olímpicas para Feminino.
+            As distâncias são 100m (apenas em piscina de 25m e por isso não é uma prova olimpica), 200m e 400m.
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/e-XGSYnhUjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="8">
+        <h4>6. Estafetas</h4>
+
+        <p id="firstBig" style="text-align: justify;">
+            As provas de estafetas são as únicas provas que são feitas em equipa de 4 nadadores.
+        </p>
+
+        <p id="firstBig" style="text-align: justify;">
+            Nas provas de estilos, há também 3 provas oficiais <a href="https://www.fina.org/">FINA</a> para Masculino e Feminino e e todas elas olímpicas.
+            As distâncias são 4x100m no estilo livre (cada nadador faz 100m livres), 4x200m livres (cada nadador faz 200m livres) e 4x100m Estilos (cada um dos 4 faz 1 estilo e a ordem é Costas, Bruços, Mariposa, Crawl ao contrário da prova individual de estilos).
+        </p>
+
+        <iframe class="centerIframeOrSvg" width="500" height="255" style="max-width: 100%; border: 5px solid rgb(8, 70, 95);" src="https://www.youtube.com/embed/SsfX1_psc6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section id="9">
+    <h3>Águas Abertas</h3>
+
+        <p id="firstBig" style="text-align: justify;">
+            Todas as provas de águas abertas são realizadas no estilo livre e têm como distâncias 5km, 10km e 20km, onde apenas a distância de 10km é feita nos Jogos Olímpicos.
+        </p>
+    </section>
+
+    <section id="10">
+    <h3>Recordes Mundiais</h3>
+    <!-- Tabelas com os recordes do mundo-->
+        <table class="centerTable"  cellpadding="10%" cellspacing="2">
+            <caption style="font-size: 20px;">
+                Masculino
+            </caption>
+            <tr>
+                <td colspan="2" rowspan="2">50m Livres</td>
+                <td>25m</td>
+                <td>20.16</td>
+                <td>Caeleb DRESSEL, EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>20.91</td>
+                <td>Cesar CIELO, Brasil</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Livres</td>
+                <td>25m</td>
+                <td>44.94</td>
+                <td>Amaury LEVEAUX, França</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>46.91</td>
+                <td>Cesar CIELO, Brasil</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Livres</td>
+                <td>25m</td>
+                <td>1:39.37</td>
+                <td>Paul BIEDERMANN, Alemanha</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:42.00</td>
+                <td>Paul BIEDERMANN, Alemanha</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">400m Livres</td>
+                <td>25m</td>
+                <td>3:32.25</td>
+                <td>Yannick AGNEL, França</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:40.07</td>
+                <td>Paul BIEDERMANN, Alemanha</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">800m Livres</td>
+                <td>25m</td>
+                <td>7:23.42</td>
+                <td>Grant HACKETT, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>7:32.12</td>
+                <td>Lin ZHANG, China</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">1500m Livres</td>
+                <td>25m</td>
+                <td>14:08.06</td>
+                <td>Gregorio PALTERINIERI, Italia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>14:31.02</td>
+                <td>Yang SUN, China</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Costas</td>
+                <td>25m</td>
+                <td>22.22</td>
+                <td>Florent MANAUDOU, França</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>24.00</td>
+                <td>Kliment KOLESNIKOV, Russia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Costas</td>
+                <td>25m</td>
+                <td>48.58</td>
+                <td>Kliment KOLESNIKOV, Russia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>51.85</td>
+                <td>Ryan MURPHY, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Costas</td>
+                <td>25m</td>
+                <td>1:45.63</td>
+                <td>Mitchell LARKIN, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:51.92</td>
+                <td>Aaron PEIRSOL, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Bruços</td>
+                <td>25m</td>
+                <td>25.25</td>
+                <td>Cameron VAN DER BURGH, Africa do Sul</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>25.95</td>
+                <td>Adam PEATY, Grã Bretenha</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Bruços</td>
+                <td>25m</td>
+                <td>55.34</td>
+                <td>Ilya SHYMANOVICH, Bielorrússia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>56.88</td>
+                <td>Adam PEATY, Grã Bretenha</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Bruços</td>
+                <td>25m</td>
+                <td>2:00.16</td>
+                <td>Kirill PRIGODA, Russia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>2:06.12</td>
+                <td>Anton CHUPKOV, Russia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Mariposa</td>
+                <td>25m</td>
+                <td>21.75</td>
+                <td>Nicholas SANTOS, Brasil</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>22.27</td>
+                <td>Andriy GOVOROV, Russia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Mariposa</td>
+                <td>25m</td>
+                <td>47.78</td>
+                <td>Caeleb DRESSEL, EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>49.50</td>
+                <td>Caeleb DRESSEL, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Mariposa</td>
+                <td>25m</td>
+                <td>1:48.24</td>
+                <td>Daiya SETO, Japão</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:50.73</td>
+                <td>Kristof MILAK, Hungria</td>
+            </tr>
+            <tr>
+                <td colspan="2">100m Estilos</td>
+                <td>25m</td>
+                <td>49.28</td>
+                <td>Caeleb DRESSEL, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Estilos</td>
+                <td>25m</td>
+                <td>1:49.63</td>
+                <td>Ryan Lochte, EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:54.00</td>
+                <td>Ryan Lochte, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">400m Estilos</td>
+                <td>25m</td>
+                <td>3:54.81</td>
+                <td>Daiya SETO, Japão</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>4:03.84</td>
+                <td>Michael Phelps, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2">4x50m Livres</td>
+                <td>25m</td>
+                <td>1:21.80</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x100m Livres</td>
+                <td>25m</td>
+                <td>3:03.03</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:08.24</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x200m Livres</td>
+                <td>25m</td>
+                <td>6:46.81</td>
+                <td>Brasil</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>6:58.55</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2">4x50m Estilos</td>
+                <td>25m</td>
+                <td>1:30.44</td>
+                <td>Russia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x100m Estilos</td>
+                <td>25m</td>
+                <td>3:19.16</td>
+                <td>Russia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:27.28</td>
+                <td>EUA</td>
+            </tr>
+        </table>
+    </section>
+    <br><br><br>
+    <section id="11">
+        <table class="centerTable" cellpadding="10%" cellspacing="2">
+            <caption style="font-size: 20px;">
+                Feminino
+            </caption>
+            <tr>
+                <td colspan="2" rowspan="2">50m Livres</td>
+                <td>25m</td>
+                <td>22.93</td>
+                <td>Ranomi KROMOWIDJOJO, Holanda</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>23.67</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Livres</td>
+                <td>25m</td>
+                <td>50.25</td>
+                <td>Cate CAMPBELL, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>51.71</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Livres</td>
+                <td>25m</td>
+                <td>1:50.43</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:52.98</td>
+                <td>Frederica PELLEGRINI, Italia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">400m Livres</td>
+                <td>25m</td>
+                <td>3:53.92</td>
+                <td>Ariarne TITMUS, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:56.46</td>
+                <td>Kathleen LEDECKY, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">800m Livres</td>
+                <td>25m</td>
+                <td>7:59.34</td>
+                <td>Mireia BELMONTE GARCIA, Espanha</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>8:04.79</td>
+                <td>Kathleen LEDECKY, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">1500m Livres</td>
+                <td>25m</td>
+                <td>15:18.01</td>
+                <td>Sarah KOEHLER, Alemanha</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>15:20.48</td>
+                <td>Kathleen LEDECKY, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Costas</td>
+                <td>25m</td>
+                <td>25.60</td>
+                <td>Kira TOUSSAINT, Holanda</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>26.98</td>
+                <td>Xiang LIU</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Costas</td>
+                <td>25m</td>
+                <td>54.89</td>
+                <td>Minna ATHERTON, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>57.57</td>
+                <td>Regan SMITH, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Costas</td>
+                <td>25m</td>
+                <td>1:58.94</td>
+                <td>Kaylee MCKEOWN, Australia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>2:03.35</td>
+                <td>Regan SMITH, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Bruços</td>
+                <td>25m</td>
+                <td>28.56</td>
+                <td>Alia ATKINSON, Jamaica</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>29.40</td>
+                <td>Lillia KING, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Bruços</td>
+                <td>25m</td>
+                <td>1:02.36</td>
+                <td>Alia ATKINSON, Jamaica (2x) e Ruta MEILUTYTE, Lituania</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>1:04.13</td>
+                <td>Lillia KING, EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Bruços</td>
+                <td>25m</td>
+                <td>2:14.57</td>
+                <td>Rebecca SONI, EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>2:19.11</td>
+                <td>Rikke PEDERSEN, Dinamarca</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">50m Mariposa</td>
+                <td>25m</td>
+                <td>24.38</td>
+                <td>Therese ALSHAMMAR, Suécia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>24.43</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">100m Mariposa</td>
+                <td>25m</td>
+                <td>54.61</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>55.48</td>
+                <td>Sarah SJOESTROEM, Suécia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Mariposa</td>
+                <td>25m</td>
+                <td>1:59.61</td>
+                <td>Mireia BELMONTE GARCIA, Espanha</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>2:01.81</td>
+                <td>Zige LIU, China</td>
+            </tr>
+            <tr>
+                <td colspan="2">100m Estilos</td>
+                <td>25m</td>
+                <td>56.51</td>
+                <td>Katinka HOSSZU, Hungria</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">200m Estilos</td>
+                <td>25m</td>
+                <td>2:01.86</td>
+                <td>Katinka HOSSZU, Hungria</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>2:06.12</td>
+                <td>Katinka HOSSZU, Hungria</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">400m Estilos</td>
+                <td>25m</td>
+                <td>4:18.94</td>
+                <td>Mireia BELMONTE GARCIA, Espanha</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>4:26.36</td>
+                <td>Katinka HOSSZU, Hungria</td>
+            </tr>
+            <tr>
+                <td colspan="2">4x50m Livres</td>
+                <td>25m</td>
+                <td>1:32.50 não homolgado</td>
+                <td>Holanda</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x100m Livres</td>
+                <td>25m</td>
+                <td>3:26.53</td>
+                <td>Holanda</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:30.05</td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x200m Livres</td>
+                <td>25m</td>
+                <td>7:32.85</td>
+                <td>Holanda</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>7:41.50</td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td colspan="2">4x50m Estilos</td>
+                <td>25m</td>
+                <td>1:42.38</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4x100m Estilos</td>
+                <td>25m</td>
+                <td>3:44.52</td>
+                <td>EUA</td>
+            </tr>
+            <tr>
+                <td>50m</td>
+                <td>3:50.40</td>
+                <td>EUA</td>
+            </tr>
+        </table>
+       <br><br>
+       Se quiser saber mais sobre os recordes e rankings mundiais e nacionais <a href="https://www.swimrankings.net">veja aqui</a>
+    </section>
+{% endblock main %}
